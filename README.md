@@ -1,10 +1,10 @@
-# Instruct Multilingual
+# Multilingual Translation
 
 ## Setup
 
 ```shell
-conda create -n instructmultilingual python=3.8.10 -y
-conda activate instructmultilingual
+conda create -n translate python=3.8.10 -y
+conda activate translate
 pip install -r requirements.txt
 ```
 
@@ -20,16 +20,16 @@ ct2-transformers-converter --model facebook/nllb-200-3.3B --output_dir models/nl
 
 ### Run the server locally
 ```shell
-uvicorn instructmultilingual.server:app --host 0.0.0.0 --port 8000
+uvicorn translate.server:app --host 0.0.0.0 --port 8000
 ```
 
 ### Using docker to run the server
 ```shell
 # Build
-docker build -t instruct-multilingual .
+docker build -t translate .
 
 # Run
-docker run -it --rm --gpus 1,2,3,4,5,6,7,8 -p 8000:8000 -v $(pwd):/instruct-multilingual instruct-multilingual
+docker run -it --rm --gpus 1,2,3,4,5,6,7,8 -p 8000:8000 -v $(pwd):/translate translate
 ```
 
 ### Client Side
@@ -42,7 +42,7 @@ python main.py
 ## Translate
 
 ```shell
-python -m instructmultilingual.translate \
+python -m translate.translate \
           --text="Cohere For AI will make the best instruct multilingual model in the world" \
           --source_language="English" \
           --target_language="Egyptian Arabic"

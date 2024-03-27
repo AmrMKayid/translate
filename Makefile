@@ -1,4 +1,4 @@
-PYTHON_MODULE_PATH=instructmultilingual
+PYTHON_MODULE_PATH=translate
 
 clean:
 	find . -name "*.pyc" -type f -delete

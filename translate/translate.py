@@ -3,7 +3,7 @@
 import fire
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-from instructmultilingual.flores_200 import lang_name_to_code
+from translate.flores_200 import lang_name_to_code
 
 
 def main(
